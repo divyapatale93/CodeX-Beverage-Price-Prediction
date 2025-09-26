@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import joblib
 from joblib import load
 
 # model = load("artifact/best_model.joblib")
@@ -112,4 +113,5 @@ if st.button("Predict Price"):
     predict = int(pipline_rdf.predict(df))
     call_price_range = price_range(predict)
     st.success(f"Price Range Prediction: {call_price_range}")
+
     st.balloons()
